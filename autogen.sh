@@ -7,10 +7,10 @@ if test -d config.status ; then
   rm -f config.status
 fi
 
-for p in glibtoolize FAIL; do
-  test "$p" = FAIL && { echo "your system lacks glibtoolize" 1>&2; exit 1; } || :
-  ( $p --version ) > /dev/null 2>&1 && { eval "glibtoolize() { env $p; }"; break; } || :
-done
+#for p in glibtoolize FAIL; do
+#  test "$p" = FAIL && { echo "your system lacks glibtoolize" 1>&2; exit 1; } || :
+#  ( $p --version ) > /dev/null 2>&1 && { eval "glibtoolize() { env $p; }"; break; } || :
+#done
 glibtoolize --no-warn -i -f
 
 aclocal
